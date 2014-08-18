@@ -13,7 +13,7 @@ analysis <- function(){
         cv <- clean[-intrain,]
         
         #train the model with sub train data  
-        #modelfit <- train(train$classe ~ ., method = "rf", preProcess = c("center", "scale"),  data = train, prox = TRUE, ntree = 10)
+        modelfit <- train(train$classe ~ ., method = "rf", preProcess = c("center", "scale"),  data = train, prox = TRUE, ntree = 10)
         
         #model efficiency 
         confusionMatrix(cv$classe, predict(modelfit, cv))
